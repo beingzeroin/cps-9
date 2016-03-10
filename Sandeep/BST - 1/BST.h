@@ -11,9 +11,11 @@ struct bstNode
 };
 
 BSTNode *createBSTNode(ElementType data);
+BSTNode *createRandomBST(int nodeCount, int maxValue);
 BSTNode *insertBSTNode(BSTNode *root, ElementType data);
 BSTNode *rinsertBSTNode(BSTNode *root, ElementType data);
 BSTNode *searchBSTNode(BSTNode *root, ElementType data);
+BSTNode *rsearchBSTNode(BSTNode *root, ElementType data);
 BSTNode *delteBSTNode(BSTNode *root, ElementType data);
 
 

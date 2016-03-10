@@ -60,9 +60,23 @@ BSTNode *rinsertBSTNode(BSTNode *root, ElementType data)
     return root;
 }
 
+BSTNode *createRandomBST(int nodeCount, int maxValue)
+{
+    int i;
+    BSTNode* root = NULL;
+
+    for(i=1;i<=nodeCount;i++)
+        root = insertBSTNode(root, rand()%maxValue);
+    return root;
+}
+
 BSTNode *rsearchBSTNode(BSTNode *root, ElementType data)
 {
-
+    if(root==NULL || root->data == data)
+        return root;
+    if(data < root->data)
+        return rsearchBSTNode(root->left, data);
+    return rsearchBSTNode(root->right, data);
 }
 
 
