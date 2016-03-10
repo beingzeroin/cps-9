@@ -12,25 +12,33 @@ BSTNode *createBSTNode(ElementType data)
 
 BSTNode *insertBSTNode(BSTNode *root, ElementType data)
 {
-    BSTNode *a=createBSTNode(data), *curr=root ,*pre=NULL;
+    BSTNode *a=createBSTNode(data), *curr=root;
     if(root==NULL)
         return a;
     else
     {
         while(curr!=NULL)
         {
-            pre=curr;
             if(curr->data>=data)
             {
+                if(curr->left==NULL)
+                {
+                    curr->left=a;
+                    break;
+                }
                 curr=curr->left;
             }
             else if(curr->data<data)
             {
+                if(curr->right==NULL)
+                {
+                    curr->right=a;
+                    break;
+                }
                 curr=curr->right;
             }
         }
-         pre=a;
-        return root;
+         return root;
     }
 }
 
