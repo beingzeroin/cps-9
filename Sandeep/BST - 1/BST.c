@@ -50,9 +50,20 @@ BSTNode *insertBSTNode(BSTNode *root, ElementType data)
 
 BSTNode *rinsertBSTNode(BSTNode *root, ElementType data)
 {
-    return NULL;
+    if(root==NULL)
+        return createBSTNode(data);
+
+    if(data <= root->data)
+         root->left = rinsertBSTNode(root->left, data);
+    else
+        root->right = rinsertBSTNode(root->right, data);
+    return root;
 }
 
+BSTNode *rsearchBSTNode(BSTNode *root, ElementType data)
+{
+
+}
 
 
 BSTNode *delteBSTNode(BSTNode *root, ElementType data)
