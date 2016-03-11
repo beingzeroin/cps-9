@@ -1,6 +1,39 @@
 #include "BST.h"
 #include <stdlib.h>
 
+BSTNode *rfindMin(BSTNode *root)
+{
+    if(root==NULL || root->left==NULL)
+        return root;
+    return findMin(root->left);
+}
+BSTNode *rfindMax(BSTNode *root)
+{
+    if(root==NULL || root->right==NULL)
+        return root;
+    return findMin(root->right);
+}
+
+BSTNode *findMin(BSTNode *root)
+{
+    if(root)
+    {
+        while(root->left!=NULL)
+            root = root->left;
+    }
+    return root;
+}
+
+BSTNode *findMax(BSTNode *root)
+{
+    if(root)
+    {
+        while(root->right!=NULL)
+            root = root->right;
+    }
+    return root;
+}
+
 BSTNode *createBSTNode(ElementType data)
 {
     BSTNode * a = malloc(sizeof(BSTNode));

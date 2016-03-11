@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "BST.h"
 #include <assert.h>
+#include <stdbool.h>
 
 int testInsert()
 {
@@ -87,6 +88,8 @@ int main()
 {
     BSTNode *root = createRandomBST(10, 100);
     print_ascii_tree(root);
+
+    assert(true);
 
     return 0;
 }
